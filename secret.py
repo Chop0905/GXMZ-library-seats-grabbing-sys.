@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-# account=input("请输入账号:")
-# password=input("请输入密码:")
+account=input("请输入账号:")
+password=input("请输入密码:")
 seat=input("请输入要占的座位号:")
 if(len(seat)==2):
     seat='0'+seat
@@ -20,8 +20,8 @@ while(True):
         time.sleep(1)
         continue
 #模拟登陆行为
-driver.find_element(By.XPATH,"/html/body/div[1]/span/div[4]/div/div/div[1]/div/div/form/div[1]/div/div/span/span/input").send_keys("120263070224")
-driver.find_element(By.XPATH,"/html/body/div[1]/span/div[4]/div/div/div[1]/div/div/form/div[2]/input").send_keys("xxl1225264833!")
+driver.find_element(By.XPATH,"/html/body/div[1]/span/div[4]/div/div/div[1]/div/div/form/div[1]/div/div/span/span/input").send_keys(account)
+driver.find_element(By.XPATH,"/html/body/div[1]/span/div[4]/div/div/div[1]/div/div/form/div[2]/input").send_keys(password)
 
 #没有登陆成功,等待,周期为0.5秒
 while(driver.current_url!="http://seatlib.gxmzu.edu.cn/home"):
